@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "204241165867",
+    "project_id": "icce-fishing",
+    "storage_bucket": "icce-fishing.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204241165867:android:a87333e5e8f7fe2b04d46e",
+        "android_client_info": {
+          "package_name": "com.coupang.mobile.p"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABr27adF-rGBlnc83ZZm-du2Zs396VYb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

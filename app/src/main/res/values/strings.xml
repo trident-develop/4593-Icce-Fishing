@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Icce Fishing</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="check">Check your\ninternet connection</string>
+    <string name="lost_network">LOST CONNECTION</string>
+    <string name="try_again">Try Again</string>
+</resources>
