@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.sp
 import com.coupang.mobile.p.R
 import com.coupang.mobile.p.storage.GamePreferences
 import com.coupang.mobile.p.ui.components.SquareButton
+import com.coupang.mobile.p.ui.components.pressableWithCooldown
 import com.coupang.mobile.p.ui.theme.GameFont
 
 @Composable
@@ -104,9 +105,7 @@ private fun LevelItem(level: Int, isUnlocked: Boolean, onClick: () -> Unit) {
             .aspectRatio(1f)
             .then(
                 if (isUnlocked) {
-                    Modifier.clickable(
-                        indication = null,
-                        interactionSource = remember { MutableInteractionSource() },
+                    Modifier.pressableWithCooldown(
                         onClick = onClick
                     )
                 } else Modifier
