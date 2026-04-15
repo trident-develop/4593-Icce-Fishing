@@ -28,6 +28,6 @@ internal fun launchWebView(
         callbackHolder = callbacks
     )
     setupView(wv, client, chrome)
-    Log.d("TAGG", "Load generated link $url")
+    
     wv.loadUrl(url)
 }

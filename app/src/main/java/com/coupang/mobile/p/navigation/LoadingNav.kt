@@ -45,10 +45,10 @@ fun LoadingGraph() {
             if (conn) {
                 Gray5(toStub = {
                     CoroutineScope(Dispatchers.IO).launch {
-                        Log.d("TAGG", "Save Stub TRUE")
+                        
                         val storage = G5Storage.getInstance(context)
                         storage.put(k("sx5"), STUB_STORAGE_VALUE_TRUE)
-                        Log.d("TAGG", "Delete push token")
+                        
                         try {
                             FirebaseMessaging.getInstance().deleteToken()
                         }catch (e: Exception){
