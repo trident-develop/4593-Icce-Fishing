@@ -14,14 +14,13 @@ import com.coupang.mobile.p.navigation.LoadingGraph
 import kotlinx.coroutines.launch
 
 class LoadingActivity : ComponentActivity() {
-    private var controller: WindowInsetsControllerCompat? = null
+    private val windowController by lazy {
+        WindowInsetsControllerCompat(window, window.decorView)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
-        controller = WindowInsetsControllerCompat(window, window.decorView)
-        controller?.systemBarsBehavior =
-            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        controller?.hide(WindowInsetsCompat.Type.systemBars())
         enableEdgeToEdge()
         val trakId = this.intent.getStringExtra(TRACKING_ID)
         if(trakId != null) {
@@ -33,5 +32,21 @@ class LoadingActivity : ComponentActivity() {
         setContent {
             LoadingGraph()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        hideSystemBars()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) hideSystemBars()
+    }
+
+    private fun hideSystemBars() {
+        windowController.systemBarsBehavior =
+            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        windowController.hide(WindowInsetsCompat.Type.systemBars())
     }
 }
